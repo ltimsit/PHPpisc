@@ -1,0 +1,44 @@
+h1
+{
+	color:white;
+	text-align:center;
+}
+body
+{
+	background-color:pink;
+}
+.block
+{
+	display:flex;
+	flex-direction:column;
+	margin:auto;
+}
+#big
+{
+	display:flex;
+	flex-direction:row;
+	align-items:baseline;
+	align-content:flex-end;
+	width:100%;
+}
+
+a
+{
+	text-decoration:none;
+}
+
+a:visited
+{
+	color:blue;
+}
+
+#copyright
+{
+	text-align:right;
+	font-family:monospace;
+	font-style:italic;
+}
+#copyright:hover
+{
+	color:blue;
+}

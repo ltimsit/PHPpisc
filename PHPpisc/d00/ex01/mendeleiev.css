@@ -1,0 +1,45 @@
+td
+{
+	border:2px solid black;
+	margin:0px;
+	padding:2px;
+	width:50px;
+	height:50px
+}
+body
+{
+	color:blue;
+}
+tr
+{
+	align-items:space-around;
+}
+.violet
+{
+	background-color:violet;
+}
+
+.nom
+{
+	text-align:center;
+	font-size:large;
+}
+.num
+{
+				position: absolute;
+			text-align: left;
+			margin: 0;
+			bottom: 0;
+/*
+			position:absolute;
+	text-align:left;
+	font-size:small;
+	right:0px;
+	bottom:0px;
+	*/
+}
+.poids
+{
+	text-align:right;
+	font-size:small;
+}
