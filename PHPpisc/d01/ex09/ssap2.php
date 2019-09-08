@@ -11,7 +11,7 @@ foreach ($argv as $elem)
 			$array[] = $case;
 	}
 }
-asort($array);
+sort($array, SORT_FLAG_CASE | SORT_NATURAL);
 foreach ($array as $printed)
 {
 	echo "$printed\n";
