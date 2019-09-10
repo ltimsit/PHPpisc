@@ -14,6 +14,17 @@ foreach ($argv as $elem)
 sort($array, SORT_FLAG_CASE | SORT_NATURAL);
 foreach ($array as $printed)
 {
-	echo "$printed\n";
+	if (ctype_alpha($printed))
+		echo "$printed\n";
+}
+foreach ($array as $printed)
+{
+	if (ctype_digit($printed))
+		echo "$printed\n";
+}
+foreach ($array as $printed)
+{
+	if (!ctype_alpha($printed) && !ctype_digit($printed))
+			echo "$printed\n";
 }
 ?>
