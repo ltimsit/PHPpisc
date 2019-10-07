@@ -1,14 +1,20 @@
 td
 {
 	border:2px solid black;
-	margin:0px;
-	padding:2px;
-	width:50px;
-	height:50px
+	margin:10px;
+	width:5%;
+	height:50px;
+	line-height:10px;
 }
-body
+tr
 {
-	color:blue;
+	height:50px;
+}
+table
+{
+	width:90%;
+	margin:auto;
+	opacity:0.7;
 }
 tr
 {
@@ -26,20 +32,5 @@ tr
 }
 .num
 {
-				position: absolute;
-			text-align: left;
-			margin: 0;
-			bottom: 0;
-/*
-			position:absolute;
-	text-align:left;
-	font-size:small;
-	right:0px;
-	bottom:0px;
-	*/
-}
-.poids
-{
-	text-align:right;
 	font-size:small;
 }

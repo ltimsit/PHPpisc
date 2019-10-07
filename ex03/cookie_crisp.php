@@ -1,16 +1,16 @@
 <?php
-for ($_get as $key=>$value)
+$cmd = 0;
+if ($_GET['action'] === true && $_GET['name'] === true)
 {
-	if ($key == "action")
+	$cmd = $_GET['action'];
+	if ($cmd == "set" && $_GET['value'] === true)
+		setcookie($_GET['name'], $_GET['value'], (3600 * 24));
+	if ($cmd == "get")
 	{
-		if ($value == "del")
-		{
-			$cmd = 0;
-		}
-		else if ($value == "get")
-			$cmd = 1;
-		else
-			$cmd = 2;
+		if ($_COOKIE[$_GET['name']] === true)
+			echo $_COOKIE[$_GET['name']]."\n";
 	}
+	if ($cmd == "del")
+		setcookie($_GET['name'], "", (3600 * 24));
 }
 ?>

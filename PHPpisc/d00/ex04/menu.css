@@ -1,0 +1,43 @@
+.block
+{
+    border: 2px solid black;
+    width: 400px;
+    background-color: aquamarine;
+    box-shadow: 5px 2px 2px black;
+    line-height: 2;
+}
+
+body
+{
+    background-image: url("https://static.coindesk.com/wp-content/uploads/2017/10/Uncle-Sam-wants-you.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+ul
+{
+    list-style-type: none;
+}
+.elem1:hover
+{
+    background-color: bisque;
+    border: 2px solid red;  
+    font-size: 25;  
+}
+
+.elem1:hover .sublist
+{
+    visibility: visible;
+    background-color: lightpink;
+}
+
+.sublist
+{
+    visibility: hidden;
+    position: absolute;
+    margin-left: 300px;
+    margin-top: -25px;
+    width: 250px;
+    border: 2px solid green;
+    font-size: 18;
+}

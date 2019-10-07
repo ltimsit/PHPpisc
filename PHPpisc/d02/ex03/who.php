@@ -8,7 +8,7 @@ while (($string = fread($fd, 628)))
 	$e = unpack("a256user/a4id/a32line/ipid/itype/I2time/a256host/i16pad", $string);
 	if ($e[type] == "7")
 	{
-		$date = gmdate("D j H:i", $e[time1]);
+		$date = date("D j H:i", $e[time1]);
 		echo "$e[user]  $e[line]  $date\n";
 	}
 }
