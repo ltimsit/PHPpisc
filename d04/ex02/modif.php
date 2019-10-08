@@ -11,24 +11,25 @@ function get_data()
         exit("ERROR\n");
     return $tab;
 }
-echo "TEST\n";
 $path = "../ex01/private";
 $file = $path."/passwd";
-$user_info = get_data()
+$user_info = get_data();
 $data = file_get_contents($file);
 $tab = unserialize($data);
 $ok = 0;
+$i = 0;
 foreach ($tab as $user)
 {
     if ($user['login'] == $user_info['login'] && $user['passwd'] == $user_info['oldpw'])
     {
-        $user['passwd'] = $user_info['newpw'];
+        $tab[$i]['passwd'] = $user_info['newpw'];
         $ok = 1;
         break;
     }
+    $i++;
 }
 if (!$ok)
-    exit("ERROR\n");
+	exit("ERROR\n");
 $tab = serialize($tab);
 file_put_contents($file, $tab);
-?>
+?>w
