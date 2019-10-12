@@ -10,9 +10,9 @@ class Color
     {
         if (isset($color['rgb']))
         {
-            $this->red = (intval($color['rgb']) >> 16) & 255;
-            $this->green = (intval($color['rgb']) >> 8) & 255;
-            $this->blue = intval($color['rgb']) & 255;
+            $this->red = intval(($color['rgb'] >> 16) & 255);
+            $this->green = intval(($color['rgb'] >> 8) & 255);
+            $this->blue = intval(($color['rgb']) & 255);
         }
         else if (isset($color['red']) && isset($color['green']) && isset($color['blue']))
         {
@@ -22,7 +22,7 @@ class Color
         }
         if (self::$verbose)
         {
-            printf("Color( red: %3d, green: %3d, blue: %3d ) constructed.\n", $this->red, $this->green, $this->blue);
+            printf("Color( red: %3d, green: %3d, blue: %3d ) constructed.r\n", $this->red, $this->green, $this->blue);
         }
     }
     public function __destruct()

@@ -7,51 +7,11 @@ Class Vertex
     private $_x;
     private $_y;
     private $_z;
-    private $_w = 1.0;
+    private $_w;
     private $_color;
     public static $verbose = FALSE;
 
-    public function x()
-    {
-        return $this->_x;
-    }
-    public function y()
-    {
-        return $this->_y;
-    }
-    public function z()
-    {
-        return $this->_z;
-    }
-    public function w()
-    {
-        return $this->_w;
-    }
-    public function color()
-    {
-        return $this->_color;
-    }
-    public function setX($arg)
-    {
-        $this->_x = $arg;
-    }
-    public function setY($arg)
-    {
-        $this->_y = $arg;
-    }
-    public function setZ($arg)
-    {
-        $this->_z = $arg;
-    }
-    public function setW($arg)
-    {
-        $this->_w = $arg;
-    }
-    public function setColor($arg)
-    {
-        $this->x = $arg;
-    }
-    public function __construct(array $tab)
+    public function __construct($tab)
     {
         if (isset($tab['x']) && isset($tab['y']) && isset($tab['z']))
         {
@@ -60,10 +20,12 @@ Class Vertex
             $this->_z = $tab['z'];
             if (isset($tab['w']))
                 $this->_w = $tab['w'];
+            else
+                $this->_w = 1.0;
             if (isset($tab['color']))
                 $this->_color = $tab['color'];
             else
-                $this->color = new Color(array('red' => 255, 'green' => 255, 'blue' => 255));
+                $this->_color = new Color(array('red' => 255, 'green' => 255, 'blue' => 255));
         }
         if (self::$verbose)
         {
