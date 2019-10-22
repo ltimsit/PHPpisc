@@ -1,6 +1,6 @@
 <?php
 
-include_once("Color.class.php");
+require_once("Color.class.php");
 
 Class Vertex
 {
@@ -11,19 +11,19 @@ Class Vertex
     private $_color;
     public static $verbose = FALSE;
 
-    public function x()
+    public function _x()
     {
         return $this->_x;
     }
-    public function y()
+    public function _y()
     {
         return $this->_y;
     }
-    public function z()
+    public function _z()
     {
         return $this->_z;
     }
-    public function w()
+    public function _w()
     {
         return $this->_w;
     }
@@ -60,7 +60,7 @@ Class Vertex
             $this->_z = $tab['z'];
             if (isset($tab['w']))
                 $this->_w = $tab['w'];
-            if (isset($tab['color']))
+            if (isset($tab['color']) && $tab['color'] instanceof Color)
                 $this->_color = $tab['color'];
             else
                 $this->color = new Color(array('red' => 255, 'green' => 255, 'blue' => 255));

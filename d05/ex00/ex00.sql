@@ -1,1 +1,1 @@
-CREATE DATABASE db_ltimsit-;
+CREATE DATABASE `db_ltimsit-`;

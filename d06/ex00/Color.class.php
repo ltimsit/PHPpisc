@@ -41,7 +41,7 @@ class Color
         $data = file_get_contents("Color.doc.txt");
         echo $data."\n";
     }
-    public function add($new_color)
+    public function add(Color $new_color)
     {
         return (new Color(array('red' => $this->red + $new_color->red,
         'green' => $this->green + $new_color->green,

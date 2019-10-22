@@ -9,10 +9,13 @@ function get_data()
             $tab['passwd'] = hash(sha512, $_POST['passwd']);
     }
     else
-        exit("ERROR\n");
+	{
+		header( "refresh:1;url=index.html" );
+		exit("ERROR\n");
+	}
     return $tab;
 }
-$path = "private";
+$path = "../private";
 $file = $path."/passwd";
 $tab = get_data();
 if (file_exists($path) === false)
@@ -31,14 +34,16 @@ else
 		foreach ($value as $key=>$login)
 		{
 			if ($key == "login" && $login == $tab['login'])
+			{
+				header( "refresh:1;url=index.html" );
 				exit("ERROR\n");
+			}
 		}
 	}
 	$udata[] = $tab;
 	$data = serialize($udata);
-	echo $data;
     file_put_contents($file, $data);
 }
-echo "OK\n";
 header("Location: index.html");
+echo "OK\n";
 ?>
