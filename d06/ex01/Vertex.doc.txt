@@ -1,0 +1,10 @@
+<- Vertex ----------------------------------------------------------------------
+The Vertex class create a Vertex
+
+An instance can be constructed from :
+an absciss value (x), an ordinate value (y), a depth value (z) an optionnal
+homogeneous coordinate (w) with a default value (1.0) and an optionnal
+color which is an instancied Object from the Color CLass with a default
+value of 
+white = Color( array( 'red' => 255, 'green' => 255, 'blue' => 255 ) );
+---------------------------------------------------------------------- Vertex ->

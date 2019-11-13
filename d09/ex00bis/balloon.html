@@ -1,0 +1,46 @@
+<style>
+    #balloon {
+        border-radius: 100%;
+        height: 200px;
+        width: 200px;
+        background-color: red;
+    }
+</style>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="balloon">
+    </div>
+    <script>
+        $('#balloon').click(gonfler);
+        $("#balloon").mouseleave(degonfler);
+        function gonfler() {
+            $('#balloon').css({ 'width': '+=10', 'height': '+=10' });
+            if ($("#balloon").css('width') > '420px')
+                $('#balloon').css({ 'width': '200px', 'height': '200px' });
+            $('#balloon').css({ 'background-color': changeColor(1) });
+        }
+        function degonfler(){
+            $('#balloon').css({ 'width': '-=5', 'height': '-=5' });
+            if ($("#balloon").css('width') < '200px')
+                $('#balloon').css({ 'width': '200px', 'height': '200px' });
+            $('#balloon').css({ 'background-color': changeColor(0) });
+        }
+        function changeColor(nb) {
+            if ($('#balloon').css("background-color") == "rgb(255, 0, 0)")
+                $('#balloon').css('background-color', (nb === 1 ? 'rgb(0, 255, 0)' : 'rgb(0, 0, 255)'));
+            else if ($('#balloon').css("background-color") == "rgb(0, 255, 0)")
+                $('#balloon').css('background-color', (nb === 1 ? 'rgb(0, 0, 255)' : 'rgb(255, 0, 0)'));
+            else if ($('#balloon').css("background-color") == "rgb(0, 0, 255)")
+                $('#balloon').css('background-color', (nb === 1 ? 'rgb(255, 0, 0)' : 'rgb(0, 255, 0)'));
+        }
+    </script>
+</body>
+
+</html>
